@@ -6,6 +6,7 @@ function computerPlay(){
 
 let playerScore = (0);
 let computerScore = (0);
+let draw = (0);
 
 
 function playRound (){
@@ -16,25 +17,25 @@ function playRound (){
 
     function play(){
     if ((playerSelection==="rock")&&(computerSelection==="scissors")) {
-     return "You win! Rock beats Scissors\nScore: Player " + ((playerScore)+1) + " Computer " + (computerScore);    
+     return "You win this round! Rock beats Scissors\nScore: Player " + (++playerScore) + " Computer " + (computerScore) + " Draw: " + (draw);   
     }
     else if ((playerSelection==="paper")&&(computerSelection==="rock")){
-     return "You win! Paper beats Rock\nScore: Player " + ((playerScore)+1) + " Computer " + (computerScore);;    
+     return "You win this round! Paper beats Rock\nScore: Player " + (++playerScore) + " Computer " + (computerScore) + " Draw: " + (draw);    
     }
     else if ((playerSelection==="scissors")&&(computerSelection==="paper")){
-     return "You win! Scissors beats Paper\nScore: Player " + ((playerScore)+1) + " Computer " + (computerScore);    
+     return "You win this round! Scissors beats Paper\nScore: Player " + (++playerScore) + " Computer " + (computerScore) + " Draw: " + (draw);    
     }
     else if ((playerSelection==="rock")&&(computerSelection==="paper")){
-     return "You lose! Paper beats Rock\nScore: Player " + (playerScore) + " Computer " + ((computerScore)+1);    
+     return "You lose this round! Paper beats Rock\nScore: Player " + (playerScore) + " Computer " + (++computerScore) + " Draw: " + (draw);    
     }
     else if ((playerSelection==="paper")&&(computerSelection==="scissors")){
-     return "You lose! Scissors beats Paper\nScore: Player " + (playerScore) + " Computer " + ((computerScore)+1);    
+     return "You lose this round! Scissors beats Paper\nScore: Player " + (playerScore) + " Computer " + (++computerScore) + " Draw: " + (draw);   
     }
     else if ((playerSelection==="scissors")&&(computerSelection==="rock")){
-     return "You lose! Rock beats Scissors\nScore: Player " + (playerScore) + " Computer " + ((computerScore)+1);    
+     return "You lose this round! Rock beats Scissors\nScore: Player " + (playerScore) + " Computer " + (++computerScore) + " Draw: " + (draw);  
     }
     else if (playerSelection===computerSelection){
-     return "Draw!"
+     return "Draw!\nScore: Player " + (playerScore) + " Computer " + (computerScore) + " Draw: " + (++draw);  
     }
     else{
         return "Error!"
@@ -43,9 +44,28 @@ function playRound (){
     const result = play();
 
     return result;  
+
+   
+
+
+
  }
- 
 
 
- console.log (playRound());
- 
+function game(){
+for (let i = 0; i < 5; i++) {
+    console.log (playRound()); 
+   } 
+
+if (parseInt(playerScore) > parseInt(computerScore)){
+    console.log("Player is the winner of the game!");                
+}
+else if (parseInt(playerScore) < parseInt(computerScore)){
+    console.log ("Computer is the winner of the game!");
+}
+else {
+    console.log ("Draw! Nobody wins :c")
+}
+}
+
+console.log (game());
