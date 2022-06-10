@@ -9,13 +9,17 @@ let playerScore = (0);
 let computerScore = (0);
 let draw = (0);
 
-
 function playRound (){
-    let playerSelection= prompt("Rock, Paper, Scissors!", "choose").toLowerCase();
+   
+    let playerSelection;
+    do {
+        playerSelection= prompt("Rock, Paper, Scissors!", "choose").toLowerCase();
+    }     
+    while (playerSelection !=="rock" && playerSelection !=="paper" && playerSelection !=="scissors")    
+        
     let computerSelection = computerPlay();
     console.log(computerSelection);
     
-
     function play(){
     if ((playerSelection==="rock")&&(computerSelection==="scissors")) {
      alert ("You win this round! Rock beats Scissors\nScore: " + (playerName) + ": " + (++playerScore) + " - Computer: " + (computerScore) + " - Draw: " + (draw));   
@@ -38,20 +42,12 @@ function playRound (){
     else if (playerSelection===computerSelection){
         alert ( "Draw!\nScore: " + (playerName)+ ": " + (playerScore) + " - Computer: " + (computerScore) + " - Draw: " + (++draw));  
     }
-    else{
-        alert ("Error!")
+    else{     
     }
     }
     const result = play();
-
-    return result;  
-
-   
-
-
-
+    return result;
  }
-
 
 function game(){
 for (let i = 0; i < 5; i++) {
@@ -68,5 +64,4 @@ else {
     alert ("Draw! Nobody wins :c")
 }
 }
-
 console.log (game());
