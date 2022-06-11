@@ -101,12 +101,13 @@ scoreText.style.fontWeight = 'bold';
 scoreText.style.margin= '0px';
 scoreText.style.textShadow = '2px 2px grey';
 scoreText.style.fontFamily = 'Aclonica';
+scoreText.style.textAlign = 'center';
 
 
 
 const board = document.createElement('div');
 board.style.width= '400px';
-board.style.height= '150px';
+board.style.height= '200px';
 board.style.backgroundColor = 'lightblue'
 board.style.borderRadius= '50px'
 board.style.border = '5px solid black'
@@ -137,20 +138,30 @@ rock.style.backgroundColor= '#87CEFA'
 rock.style.borderRadius= '50px'
 rock.addEventListener('click', function(e){    
     playerSelection='rock';
+    board.style.background =  'lightblue';
+    scoreText.textContent = 'Score';
     console.log(playerSelection);
     playRound(); 
     scoreLine.textContent = result;
     if (playerScore===5) {
-        scoreLine.textContent = `The winner is ${playerName}!`;
+        scoreText.textContent = `The winner is ${playerName}!`;
+        scoreLine.textContent = ' ';
         playerScore = 0;
         computerScore = 0;
         draw = 0;
+        board.style.backgroundImage= 'url(goku-happy.gif)';
+        board.style.backgroundSize = '400px 190px';
+        board.style.backgroundRepeat = 'no-repeat';
     }    
     else if (computerScore===5) {
-        scoreLine.textContent = `The winner is the computer!`;
+        scoreText.textContent = `The winner is the computer!`;
+        scoreLine.textContent = ' ';
         playerScore = 0;
         computerScore = 0;
         draw = 0;
+        board.style.backgroundImage= 'url(goku-sad.gif)';
+        board.style.backgroundSize = '400px 190px';
+        board.style.backgroundRepeat = 'no-repeat';
     }
     
 }) ;
@@ -165,20 +176,30 @@ paper.style.boxShadow = '8px 10px 5px grey';
 paper.style.borderRadius= '50px'
 paper.addEventListener('click', function(e){    
     playerSelection='paper';
+    board.style.background =  'lightblue';
+    scoreText.textContent = 'Score';
     console.log(playerSelection);
     playRound();
     scoreLine.textContent = result;  
     if (playerScore===5) {
-        scoreLine.textContent = `The winner is ${playerName}!`;
+        scoreText.textContent = `The winner is ${playerName}!`;
+        scoreLine.textContent = ' ';
         playerScore = 0;
         computerScore = 0;
         draw = 0;
+        board.style.backgroundImage= 'url(goku-happy.gif)';
+        board.style.backgroundSize = '400px 190px';
+        board.style.backgroundRepeat = 'no-repeat';
     }    
     else if (computerScore===5) {
-        scoreLine.textContent = `The winner is the computer!`;
+        scoreText.textContent = `The winner is the computer!`;
+        scoreLine.textContent = ' ';
         playerScore = 0;
         computerScore = 0;
         draw = 0;
+        board.style.backgroundImage= 'url(goku-sad.gif)';
+        board.style.backgroundSize = '400px 190px';
+        board.style.backgroundRepeat = 'no-repeat';
     }
     
 }) ;
@@ -193,22 +214,33 @@ scissors.style.height='50px';
 scissors.style.boxShadow = '8px 10px 5px grey';
 scissors.style.backgroundColor= '#87CEFA'
 scissors.style.borderRadius= '50px'
-scissors.addEventListener('click', function(e){    
+scissors.addEventListener('click', function(e){   
+    board.style.background =  'lightblue';
+    scoreText.textContent = 'Score';
     playerSelection='scissors';
     console.log(playerSelection);
     playRound();   
     scoreLine.textContent = result;
     if (playerScore===5) {
-        scoreLine.textContent = `The winner is ${playerName}!`;
+        scoreText.textContent = `The winner is ${playerName}!`;
+        scoreLine.textContent = ' ';
         playerScore = 0;
         computerScore = 0;
         draw = 0;
+        board.style.backgroundImage= 'url(goku-happy.gif)';
+        board.style.backgroundSize = '400px 190px';
+        board.style.backgroundRepeat = 'no-repeat';
     }
     else if (computerScore===5) {
-        scoreLine.textContent = `The winner is the computer!`;
+        scoreText.textContent = `The winner is the computer!`;
+        scoreLine.textContent = ' ';
         playerScore = 0;
         computerScore = 0;
         draw = 0;
+        board.style.backgroundImage= 'url(goku-sad.gif)';
+        board.style.backgroundSize = '400px 190px';;
+        board.style.backgroundRepeat = 'no-repeat';
+
     }
     
 }) ;
