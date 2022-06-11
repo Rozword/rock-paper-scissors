@@ -11,13 +11,8 @@ let draw = (0);
 let playerSelection;
 let result;
 
-function playRound (){
-   
-    //let playerSelection;
-    //do {
-    //    playerSelection= prompt("Rock, Paper, Scissors!", "choose").toLowerCase();
-    //}     
-    //while (playerSelection !=="rock" && playerSelection !=="paper" && playerSelection !=="scissors")    
+function playRound (){  
+    
         
     let computerSelection = computerPlay();
     console.log(computerSelection);
@@ -53,11 +48,7 @@ function playRound (){
     }
     else{     
     }
-    }    
-    
-
-
-
+    }   
     
 const body = document.querySelector('body')
 const container = document.createElement('div');
@@ -123,9 +114,6 @@ scoreLine.style.color = 'blue';
 scoreLine.style.margin = '0px';
 scoreLine.style.whiteSpace = 'pre-wrap';
 scoreLine.style.textAlign = 'center';
-
-
-
 
 
 const rock = document.createElement('button');
@@ -202,9 +190,7 @@ paper.addEventListener('click', function(e){
         board.style.backgroundRepeat = 'no-repeat';
     }
     
-}) ;
-    
-
+}) ; 
 
 const scissors = document.createElement('button');
 scissors.textContent = 'Scissors';
@@ -240,9 +226,7 @@ scissors.addEventListener('click', function(e){
         board.style.backgroundImage= 'url(goku-sad.gif)';
         board.style.backgroundSize = '400px 190px';;
         board.style.backgroundRepeat = 'no-repeat';
-
-    }
-    
+    }    
 }) ;
 
 body.appendChild(container);
@@ -255,22 +239,3 @@ ui.appendChild(scoreTittle);
 scoreTittle.appendChild(scoreText);
 ui.appendChild(board);
 board.appendChild(scoreLine);
-
-
-
-//function game(){
-//for (let i = 0; i < 5; i++) {
-//    console.log (playRound()); 
-//   } 
-//
-//if (parseInt(playerScore) > parseInt(computerScore)){
-//    alert(playerName + " is the winner of the game!");                
-//}
-//else if (parseInt(playerScore) < parseInt(computerScore)){
-//    alert ("Computer is the winner of the game!");
-//}
-//else {
-//   alert ("Draw! Nobody wins :c")
-//}
-//}
-//console.log (game());
